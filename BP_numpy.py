@@ -6,6 +6,9 @@ N_data = 100000
 x_data = np.float32(10*np.random.rand(N_data,2)).T
 y_data = (np.dot(x_data.T**2, [2, 1]) + 3).reshape((N_data,1)).T
 
+x_test_data = np.float32(10*np.random.rand(10,2)).T
+y_test_data = (np.dot(x_test_data.T**2, [2, 1]) + 3).reshape((10,1)).T
+
 x_test_data_x = np.arange(0,10,0.1)
 x_test_data_y = np.arange(0,10,0.1)
 X, Y = np.meshgrid(x_test_data_x, x_test_data_y)
@@ -82,3 +85,6 @@ if __name__ == '__main__':
     plt.plot(model.episode_loss,'-')
     print(model.episode_loss)
     plt.show()
+
+    predict = model.predict(x_test_data)
+    print(np.concatenate((y_test_data.T, predict.T), axis=1))
