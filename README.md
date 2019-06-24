@@ -4,3 +4,6 @@ BP algorithm using only Numpy
 One hidden layer, with activation function 'sigmoid'
 
 To fit a nonlinear function
+
+## Loss
+![Loss](https://github.com/Mingrui-Yu/BP-Algorithm/blob/master/loss.png?raw=true)
